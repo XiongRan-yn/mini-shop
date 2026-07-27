@@ -1,0 +1,110 @@
+/* 搜索页样式 */
+
+/* ========== 搜索栏 ========== */
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 20rpx;
+  background: #ffffff;
+}
+.search-input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 40rpx;
+  padding: 14rpx 24rpx;
+}
+.search-icon {
+  font-size: 28rpx;
+  margin-right: 12rpx;
+}
+.search-input {
+  flex: 1;
+  font-size: 28rpx;
+}
+.search-clear {
+  font-size: 28rpx;
+  color: #999;
+  padding: 4rpx;
+}
+.search-btn {
+  font-size: 28rpx;
+  color: #ff5777;
+  padding: 0 20rpx;
+  white-space: nowrap;
+}
+
+/* ========== 搜索结果 ========== */
+.result-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx;
+  gap: 20rpx;
+}
+.result-item {
+  width: calc(50% - 10rpx);
+}
+
+/* ========== 区块 ========== */
+.section {
+  margin: 30rpx 20rpx;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+}
+.clear-btn {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* ========== 标签列表 ========== */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+.tag {
+  background: #f5f5f5;
+  color: #666;
+  font-size: 26rpx;
+  padding: 12rpx 28rpx;
+  border-radius: 32rpx;
+}
+.tag:active {
+  background: #ff5777;
+  color: #fff;
+}
+
+/* ========== 热门搜索列表 ========== */
+.hot-search-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #f5f5f5;
+  gap: 20rpx;
+}
+.hot-index {
+  width: 40rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #ff5777;
+}
+.hot-name {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+.hot-sales {
+  font-size: 24rpx;
+  color: #999;
+}

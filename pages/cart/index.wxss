@@ -1,0 +1,70 @@
+/* 购物车页样式 */
+
+/* ========== 购物车头部 ========== */
+.cart-header {
+  padding: 20rpx 30rpx;
+  background: #ffffff;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.select-all {
+  font-size: 28rpx;
+  color: #333;
+}
+.edit-btn {
+  font-size: 28rpx;
+  color: #ff5777;
+}
+
+/* ========== 商品列表 ========== */
+.cart-list {
+  padding: 20rpx;
+}
+
+/* ========== 底部结算栏 ========== */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  border-top: 1rpx solid #eeeeee;
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 200;
+}
+.bar-left {
+  font-size: 28rpx;
+  color: #333;
+  padding-right: 20rpx;
+}
+.bar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16rpx;
+}
+.total-wrap {
+  display: flex;
+  align-items: baseline;
+}
+.total-label {
+  font-size: 28rpx;
+  color: #333;
+}
+.total-price {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ff4757;
+}
+.checkout-btn {
+  background: #ff5777;
+  color: #ffffff;
+  font-size: 28rpx;
+  padding: 16rpx 36rpx;
+  border-radius: 36rpx;
+  white-space: nowrap;
+}

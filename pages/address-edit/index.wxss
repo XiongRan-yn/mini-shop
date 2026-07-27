@@ -1,0 +1,43 @@
+/* 地址编辑页样式 */
+
+/* ========== 表单卡片 ========== */
+.form-card {
+  margin: 20rpx;
+  padding: 0;
+}
+.form-item {
+  display: flex;
+  align-items: center;
+  padding: 28rpx 30rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.form-item:last-child {
+  border-bottom: none;
+}
+.form-label {
+  width: 160rpx;
+  font-size: 28rpx;
+  color: #333;
+  flex-shrink: 0;
+}
+.form-input {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+.form-picker {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+.form-picker.placeholder {
+  color: #999;
+}
+
+/* ========== 保存按钮 ========== */
+.save-section {
+  padding: 40rpx 30rpx;
+}
+.save-btn {
+  width: 100%;
+}

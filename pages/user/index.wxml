@@ -1,0 +1,91 @@
+<!-- 个人中心页 -->
+<view class="page">
+  <!-- 用户信息头部 -->
+  <view class="user-header">
+    <!-- 已登录 -->
+    <view class="user-info" wx:if="{{isLogin}}">
+      <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill" />
+      <view class="user-text">
+        <text class="nickname">{{userInfo.nickName}}</text>
+        <text class="user-desc">欢迎使用 MiniShop</text>
+      </view>
+    </view>
+
+    <!-- 未登录 -->
+    <view class="user-info" wx:else>
+      <view class="avatar-placeholder">👤</view>
+      <view class="user-text">
+        <text class="nickname">点击登录</text>
+        <text class="user-desc">登录后享受更多权益</text>
+      </view>
+    </view>
+
+    <!-- 登录按钮 -->
+    <button
+      wx:if="{{!isLogin}}"
+      class="login-btn"
+      open-type="getUserInfo"
+      bindgetuserinfo="onGetUserInfo"
+    >授权登录</button>
+
+    <!-- 退出登录 -->
+    <view wx:else class="logout-btn" bindtap="onLogout">退出登录</view>
+  </view>
+
+  <!-- 订单概览 -->
+  <view class="order-section card">
+    <view class="section-header flex-between">
+      <text class="section-title">我的订单</text>
+      <text class="section-more" bindtap="onViewOrders">全部订单 ›</text>
+    </view>
+    <view class="order-grid">
+      <view class="order-item" bindtap="onViewOrders" data-status="pending_payment">
+        <text class="order-icon">💳</text>
+        <text class="order-label">待付款</text>
+        <view class="order-badge" wx:if="{{orderStats.pending_payment > 0}}">{{orderStats.pending_payment}}</view>
+      </view>
+      <view class="order-item" bindtap="onViewOrders" data-status="pending_shipment">
+        <text class="order-icon">📦</text>
+        <text class="order-label">待发货</text>
+        <view class="order-badge" wx:if="{{orderStats.pending_shipment > 0}}">{{orderStats.pending_shipment}}</view>
+      </view>
+      <view class="order-item" bindtap="onViewOrders" data-status="pending_receipt">
+        <text class="order-icon">🚚</text>
+        <text class="order-label">待收货</text>
+        <view class="order-badge" wx:if="{{orderStats.pending_receipt > 0}}">{{orderStats.pending_receipt}}</view>
+      </view>
+      <view class="order-item" bindtap="onViewOrders" data-status="completed">
+        <text class="order-icon">✅</text>
+        <text class="order-label">已完成</text>
+        <view class="order-badge" wx:if="{{orderStats.completed > 0}}">{{orderStats.completed}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能菜单 -->
+  <view class="menu-section card">
+    <view class="menu-item" bindtap="onAddressManage">
+      <text class="menu-icon">📫</text>
+      <text class="menu-text">收货地址管理</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="divider"></view>
+    <view class="menu-item" bindtap="onContact">
+      <text class="menu-icon">💬</text>
+      <text class="menu-text">联系客服</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="divider"></view>
+    <view class="menu-item" bindtap="onAbout">
+      <text class="menu-icon">ℹ️</text>
+      <text class="menu-text">关于我们</text>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 底部占位 -->
+  <view style="height: 120rpx;"></view>
+</view>
+
+<!-- 自定义 TabBar -->
+<custom-tab-bar selected="{{3}}" />

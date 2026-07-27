@@ -1,0 +1,19 @@
+<!-- 自定义TabBar - 纯文字+emoji，无需图片资源 -->
+<view class="tab-bar">
+  <view
+    wx:for="{{list}}"
+    wx:key="index"
+    class="tab-item {{selected === index ? 'active' : ''}}"
+    data-index="{{index}}"
+    bindtap="switchTab"
+  >
+    <!-- 购物车角标 -->
+    <view class="tab-icon-wrap" wx:if="{{index === 2}}">
+      <text class="tab-icon">{{item.icon}}</text>
+      <view class="badge" wx:if="{{showBadge}}">{{cartCount > 99 ? '99+' : cartCount}}</view>
+    </view>
+    <!-- 普通图标 -->
+    <text class="tab-icon" wx:else>{{item.icon}}</text>
+    <text class="tab-text">{{item.text}}</text>
+  </view>
+</view>

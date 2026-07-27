@@ -1,0 +1,66 @@
+/* 地址列表页样式 */
+
+/* ========== 地址卡片 ========== */
+.address-item {
+  margin: 20rpx;
+  padding: 30rpx;
+}
+.addr-header {
+  margin-bottom: 12rpx;
+}
+.addr-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+.addr-phone {
+  font-size: 28rpx;
+  color: #666;
+}
+.addr-body {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.default-tag {
+  background: #ff5777;
+  color: #fff;
+  font-size: 22rpx;
+  padding: 2rpx 12rpx;
+  border-radius: 6rpx;
+  margin-right: 12rpx;
+  flex-shrink: 0;
+}
+.addr-text {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.5;
+}
+.addr-actions {
+  display: flex;
+  gap: 24rpx;
+  padding-top: 16rpx;
+  border-top: 1rpx solid #f5f5f5;
+}
+.action-btn {
+  font-size: 26rpx;
+  color: #ff5777;
+}
+.action-btn.danger {
+  color: #ff4757;
+}
+
+/* ========== 底部新建按钮 ========== */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 30rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background: #ffffff;
+  border-top: 1rpx solid #eee;
+}
+.add-btn {
+  width: 100%;
+}
