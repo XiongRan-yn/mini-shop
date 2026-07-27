@@ -1,0 +1,72 @@
+<!-- 搜索页 -->
+<view class="page">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <view class="search-input-wrap">
+      <text class="search-icon">🔍</text>
+      <input
+        class="search-input"
+        placeholder="搜索心仪的商品"
+        value="{{keyword}}"
+        bindinput="onInput"
+        bindconfirm="onConfirm"
+        focus
+      />
+      <text class="search-clear" wx:if="{{keyword}}" bindtap="onInput" data-value="">✕</text>
+    </view>
+    <text class="search-btn" bindtap="onSearch">搜索</text>
+  </view>
+
+  <!-- 搜索结果 -->
+  <view wx:if="{{searched}}">
+    <view class="result-grid" wx:if="{{results.length > 0}}">
+      <view class="result-item" wx:for="{{results}}" wx:key="id">
+        <goods-card goods="{{item}}" />
+      </view>
+    </view>
+    <view class="empty-state" wx:else>
+      <text class="empty-icon">🔍</text>
+      <text class="empty-text">未找到相关商品</text>
+    </view>
+  </view>
+
+  <!-- 搜索历史 & 热词 -->
+  <view wx:else>
+    <!-- 搜索历史 -->
+    <view class="section" wx:if="{{searchHistory.length > 0}}">
+      <view class="section-header">
+        <text class="section-title">搜索历史</text>
+        <text class="clear-btn" bindtap="onClearHistory">🗑 清空</text>
+      </view>
+      <view class="tag-list">
+        <text
+          class="tag"
+          wx:for="{{searchHistory}}"
+          wx:key="index"
+          data-keyword="{{item}}"
+          bindtap="onHistoryTap"
+        >{{item}}</text>
+      </view>
+    </view>
+
+    <!-- 热门搜索 -->
+    <view class="section">
+      <view class="section-header">
+        <text class="section-title">🔥 热门搜索</text>
+      </view>
+      <view class="hot-search-list">
+        <view
+          class="hot-search-item"
+          wx:for="{{hotSearch}}"
+          wx:key="id"
+          data-keyword="{{item.name}}"
+          bindtap="onHistoryTap"
+        >
+          <text class="hot-index">{{index + 1}}</text>
+          <text class="hot-name text-ellipsis">{{item.name}}</text>
+          <text class="hot-sales">{{item.sales}}人购买</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,69 @@
+<!-- 首页 -->
+<view class="page">
+  <!-- 搜索栏 -->
+  <view class="search-bar" bindtap="onSearchTap">
+    <view class="search-box">
+      <text class="search-icon">🔍</text>
+      <text class="search-placeholder">搜索心仪的商品</text>
+    </view>
+  </view>
+
+  <!-- 轮播图 - CDN 真实图片 -->
+  <swiper class="banner-swiper" indicator-dots autoplay interval="3000" circular>
+    <swiper-item wx:for="{{bannerImages}}" wx:key="id">
+      <image
+        class="banner-image"
+        src="{{item.image}}"
+        mode="aspectFill"
+        data-link="{{item.link}}"
+        bindtap="onBannerTap"
+      />
+    </swiper-item>
+  </swiper>
+
+  <!-- 分类导航 -->
+  <view class="category-nav card">
+    <view
+      class="category-item"
+      wx:for="{{categories}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onCategoryTap"
+    >
+      <text class="category-icon">{{item.icon}}</text>
+      <text class="category-name">{{item.name}}</text>
+    </view>
+  </view>
+
+  <!-- 热销商品 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">🔥 热销商品</text>
+      <text class="section-more" bindtap="onCategoryTap">更多 ›</text>
+    </view>
+    <scroll-view scroll-x class="hot-scroll">
+      <view class="hot-list">
+        <view class="hot-item" wx:for="{{hotProducts}}" wx:key="id">
+          <goods-card goods="{{item}}" />
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 推荐商品 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">✨ 为你推荐</text>
+    </view>
+    <view class="recommend-grid">
+      <view class="recommend-item" wx:for="{{recommendProducts}}" wx:key="id">
+        <goods-card goods="{{item}}" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部占位 -->
+  <view style="height: 120rpx;"></view>
+</view>
+
+<custom-tab-bar selected="{{0}}" />

@@ -1,0 +1,155 @@
+/* 订单列表页样式 */
+
+/* ========== 状态Tab ========== */
+.tab-bar {
+  white-space: nowrap;
+  background: #ffffff;
+  padding: 0;
+  border-bottom: 1rpx solid #eee;
+}
+.tab-item {
+  display: inline-block;
+  padding: 24rpx 32rpx;
+  font-size: 28rpx;
+  color: #666;
+  position: relative;
+}
+.tab-item.active {
+  color: #ff5777;
+  font-weight: 500;
+}
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48rpx;
+  height: 4rpx;
+  background: #ff5777;
+  border-radius: 2rpx;
+}
+
+/* ========== 订单卡片 ========== */
+.order-card {
+  margin: 20rpx;
+  padding: 0;
+}
+.order-header {
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.order-no {
+  font-size: 24rpx;
+  color: #999;
+}
+.order-status {
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+/* ========== 订单商品 ========== */
+.order-goods {
+  padding: 0 30rpx;
+}
+.goods-row {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.goods-row:last-child {
+  border-bottom: none;
+}
+.goods-thumb {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+.goods-info {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100rpx;
+}
+.goods-name {
+  font-size: 26rpx;
+  color: #333;
+}
+.goods-price-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.goods-price {
+  font-size: 28rpx;
+  color: #ff4757;
+  font-weight: 500;
+}
+.goods-qty {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* ========== 合计 ========== */
+.order-total {
+  padding: 20rpx 30rpx;
+  text-align: right;
+  font-size: 26rpx;
+  color: #666;
+  border-top: 1rpx solid #f5f5f5;
+}
+.total-price {
+  color: #ff4757;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+/* ========== 操作按钮 ========== */
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16rpx;
+  padding: 16rpx 30rpx 24rpx;
+  border-top: 1rpx solid #f5f5f5;
+}
+.action-btn {
+  padding: 12rpx 28rpx;
+  border-radius: 32rpx;
+  font-size: 26rpx;
+}
+.action-btn.primary {
+  background: #ff5777;
+  color: #fff;
+}
+.action-btn.outline {
+  border: 1rpx solid #ddd;
+  color: #666;
+  background: #fff;
+}
+
+/* ========== 空状态 ========== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 0;
+  color: #999;
+}
+.empty-icon {
+  font-size: 100rpx;
+  margin-bottom: 20rpx;
+}
+.empty-text {
+  font-size: 28rpx;
+}
+.empty-sub {
+  font-size: 24rpx;
+  margin-top: 8rpx;
+  color: #ccc;
+}

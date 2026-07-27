@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "MiniShop",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "goods-card": "/components/goods-card/index",
+    "custom-tab-bar": "/custom-tab-bar/index"
+  }
+}

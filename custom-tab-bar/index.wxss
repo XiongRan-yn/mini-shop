@@ -1,0 +1,61 @@
+/* 自定义 TabBar 样式 */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #ffffff;
+  border-top: 1rpx solid #eeeeee;
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 999;
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+.tab-icon {
+  font-size: 40rpx;
+  line-height: 1.2;
+}
+
+.tab-text {
+  font-size: 20rpx;
+  color: #999999;
+  margin-top: 2rpx;
+}
+
+.tab-item.active .tab-text {
+  color: #ff5777;
+}
+
+/* 购物车角标 */
+.tab-icon-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  position: absolute;
+  top: -8rpx;
+  right: -16rpx;
+  min-width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  background: #ff5777;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 16rpx;
+  padding: 0 8rpx;
+}

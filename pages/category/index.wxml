@@ -1,0 +1,34 @@
+<!-- 分类页 - 左右布局 -->
+<view class="page flex">
+  <!-- 左侧分类列表 -->
+  <scroll-view scroll-y class="left-sidebar">
+    <view
+      wx:for="{{categories}}"
+      wx:key="id"
+      class="sidebar-item {{activeCategoryId === item.id ? 'active' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="onCategoryTap"
+    >
+      <text class="sidebar-icon">{{item.icon}}</text>
+      <text class="sidebar-name">{{item.name}}</text>
+    </view>
+  </scroll-view>
+
+  <!-- 右侧商品列表 -->
+  <scroll-view scroll-y class="right-content">
+    <view class="product-list" wx:if="{{products.length > 0}}">
+      <view class="product-item" wx:for="{{products}}" wx:key="id">
+        <goods-card goods="{{item}}" />
+      </view>
+    </view>
+    <view class="empty-state" wx:else>
+      <text class="empty-icon">📦</text>
+      <text class="empty-text">暂无商品</text>
+    </view>
+    <!-- 底部占位 -->
+    <view style="height: 120rpx;"></view>
+  </scroll-view>
+</view>
+
+<!-- 自定义 TabBar -->
+<custom-tab-bar selected="{{1}}" />

@@ -1,0 +1,55 @@
+<!-- 购物车页 -->
+<view class="page">
+  <!-- 商品列表 -->
+  <view wx:if="{{cartList.length > 0}}">
+    <view class="cart-header flex-between">
+      <view class="select-all" bindtap="onToggleAll">
+        <text>{{allSelected ? '✅' : '⬜'}} 全选</text>
+      </view>
+      <view class="edit-btn" bindtap="onToggleEdit">
+        {{editMode ? '完成' : '编辑'}}
+      </view>
+    </view>
+
+    <view class="cart-list">
+      <cart-item
+        wx:for="{{cartList}}"
+        wx:key="id"
+        item="{{item}}"
+        editMode="{{editMode}}"
+        bind:toggle="onToggle"
+        bind:change="onChangeQuantity"
+        bind:delete="onDelete"
+      />
+    </view>
+  </view>
+
+  <!-- 空购物车 -->
+  <view class="empty-state" wx:else>
+    <text class="empty-icon">🛒</text>
+    <text class="empty-text">购物车还是空的</text>
+    <text class="empty-sub">快去逛逛吧~</text>
+  </view>
+
+  <!-- 底部占位 -->
+  <view style="height: 120rpx;"></view>
+
+  <!-- 底部结算栏 -->
+  <view class="bottom-bar" wx:if="{{cartList.length > 0}}">
+    <view class="bar-left" bindtap="onToggleAll">
+      <text>{{allSelected ? '✅' : '⬜'}} 全选</text>
+    </view>
+    <view class="bar-right">
+      <view class="total-wrap">
+        <text class="total-label">合计：</text>
+        <text class="total-price">¥{{totalPrice}}</text>
+      </view>
+      <view class="checkout-btn" bindtap="onCheckout">
+        结算({{cartList.length}})
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 自定义 TabBar -->
+<custom-tab-bar selected="{{2}}" />

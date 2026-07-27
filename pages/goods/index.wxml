@@ -1,0 +1,58 @@
+<!-- 商品详情页 -->
+<view class="page" wx:if="{{goods}}">
+  <!-- CDN 真实图片轮播 -->
+  <swiper class="goods-swiper" indicator-dots autoplay circular>
+    <swiper-item wx:for="{{swiperImages}}" wx:key="index">
+      <image class="goods-image" src="{{item}}" mode="aspectFill" />
+    </swiper-item>
+  </swiper>
+
+  <!-- 商品基本信息 -->
+  <view class="goods-info card">
+    <view class="price-row">
+      <text class="price-current">¥{{goods.price}}</text>
+      <text class="price-original" wx:if="{{goods.originalPrice > goods.price}}">¥{{goods.originalPrice}}</text>
+    </view>
+    <view class="goods-name">{{goods.name}}</view>
+    <view class="goods-meta">
+      <text class="meta-item">销量 {{goods.sales}}</text>
+      <text class="meta-item" wx:if="{{goods.stock > 0}}">库存 {{goods.stock}}件</text>
+    </view>
+  </view>
+
+  <!-- 规格 -->
+  <view class="specs-card card" wx:if="{{goods.specs}}">
+    <text class="specs-label">商品规格</text>
+    <text class="specs-value">{{goods.specs}}</text>
+  </view>
+
+  <!-- 描述 -->
+  <view class="desc-card card">
+    <view class="desc-title">商品详情</view>
+    <view class="desc-content">{{goods.desc}}</view>
+  </view>
+
+  <view style="height: 140rpx;"></view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom-bar">
+    <view class="quantity-ctrl">
+      <view class="qty-btn" bindtap="onDecrease">−</view>
+      <text class="qty-num">{{quantity}}</text>
+      <view class="qty-btn" bindtap="onIncrease">+</view>
+    </view>
+    <view class="bar-actions">
+      <view class="btn-cart" bindtap="onAddToCart">加入购物车</view>
+      <view class="btn-buy" bindtap="onBuyNow">立即购买</view>
+    </view>
+  </view>
+
+  <view class="cart-tip" wx:if="{{showCartTip}}" bindtap="onGoCart">
+    <text>已加入购物车，点击查看 ›</text>
+  </view>
+</view>
+
+<view class="empty-state" wx:else>
+  <text class="empty-icon">😕</text>
+  <text class="empty-text">商品不存在或已下架</text>
+</view>

@@ -1,0 +1,148 @@
+/* 订单详情页样式 */
+
+/* ========== 状态横幅 ========== */
+.status-banner {
+  padding: 40rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+.status-text {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+.status-desc {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ========== 信息卡片 ========== */
+.info-card {
+  margin: 20rpx;
+  padding: 24rpx 30rpx;
+}
+.card-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12rpx 0;
+  font-size: 26rpx;
+  color: #666;
+}
+.info-row.total {
+  padding-top: 20rpx;
+  margin-top: 8rpx;
+  border-top: 1rpx solid #eee;
+}
+.info-label {
+  color: #999;
+  flex-shrink: 0;
+}
+.info-value {
+  color: #333;
+  text-align: right;
+  word-break: break-all;
+}
+.total-price {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ff4757;
+}
+
+/* ========== 商品项 ========== */
+.goods-item {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.goods-item:last-child {
+  border-bottom: none;
+}
+.goods-thumb {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+.goods-info {
+  flex: 1;
+  overflow: hidden;
+}
+.goods-name {
+  font-size: 26rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+.goods-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.goods-price {
+  font-size: 28rpx;
+  color: #ff4757;
+  font-weight: 500;
+}
+.goods-qty {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* ========== 底部操作栏 ========== */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16rpx;
+  padding: 0 20rpx;
+  background: #fff;
+  border-top: 1rpx solid #eee;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.action-btn {
+  padding: 16rpx 36rpx;
+  border-radius: 36rpx;
+  font-size: 28rpx;
+}
+.action-btn.primary {
+  background: #ff5777;
+  color: #fff;
+}
+.action-btn.outline {
+  border: 1rpx solid #ddd;
+  color: #666;
+  background: #fff;
+}
+
+/* ========== 空状态 ========== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 0;
+  color: #999;
+}
+.empty-icon {
+  font-size: 100rpx;
+  margin-bottom: 20rpx;
+}
+.empty-text {
+  font-size: 28rpx;
+}

@@ -1,0 +1,27 @@
+<!-- 购物车商品项 -->
+<view class="cart-item">
+  <!-- 选择框 -->
+  <view class="checkbox" bindtap="onToggle">
+    <text class="checkbox-icon">{{item.selected ? '✅' : '⬜'}}</text>
+  </view>
+
+  <!-- 商品图 -->
+  <image class="item-image" src="{{image}}" mode="aspectFill" />
+
+  <!-- 商品信息 -->
+  <view class="item-info">
+    <view class="item-name text-ellipsis">{{item.name}}</view>
+    <view class="item-bottom">
+      <text class="item-price">¥{{item.price}}</text>
+      <!-- 数量控制 -->
+      <view class="quantity-ctrl">
+        <view class="qty-btn minus" bindtap="onDecrease">−</view>
+        <text class="qty-num">{{item.quantity}}</text>
+        <view class="qty-btn plus" bindtap="onIncrease">+</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 删除按钮（编辑模式） -->
+  <view class="delete-btn" wx:if="{{editMode}}" bindtap="onDelete">删除</view>
+</view>

@@ -1,0 +1,96 @@
+/* 购物车商品项样式 */
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
+  margin-bottom: 16rpx;
+  position: relative;
+}
+
+/* 选择框 */
+.checkbox {
+  width: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.checkbox-icon {
+  font-size: 40rpx;
+}
+
+/* 商品图片 */
+.item-image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 12rpx;
+  flex-shrink: 0;
+  margin: 0 16rpx;
+}
+
+/* 商品信息 */
+.item-info {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160rpx;
+}
+.item-name {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.4;
+}
+.item-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item-price {
+  color: #ff4757;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+/* 数量控制 */
+.quantity-ctrl {
+  display: flex;
+  align-items: center;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.qty-btn {
+  width: 52rpx;
+  height: 52rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  color: #333;
+  background: #f8f8f8;
+}
+.qty-num {
+  width: 64rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+.qty-btn:active {
+  background: #eee;
+}
+
+/* 删除按钮 */
+.delete-btn {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  background: #ff4757;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 8rpx;
+}
