@@ -8,6 +8,7 @@
     <text class="status-desc" wx:elif="{{order.status === 'pending_receipt'}}">您的包裹正在路上</text>
     <text class="status-desc" wx:elif="{{order.status === 'completed'}}">交易已完成</text>
     <text class="status-desc" wx:elif="{{order.status === 'cancelled'}}">订单已取消</text>
+    <text class="status-desc" wx:elif="{{order.status === 'after_sale'}}">售后处理中</text>
   </view>
 
   <!-- 收货地址 -->
@@ -74,10 +75,12 @@
   <view style="height: 140rpx;"></view>
 
   <!-- 底部操作栏 -->
-  <view class="bottom-bar" wx:if="{{order.status === 'pending_payment' || order.status === 'pending_receipt'}}">
+  <view class="bottom-bar" wx:if="{{order.status === 'pending_payment' || order.status === 'pending_receipt' || order.status === 'completed'}}">
     <view class="action-btn outline" wx:if="{{order.status === 'pending_payment'}}" bindtap="onCancel">取消订单</view>
     <view class="action-btn primary" wx:if="{{order.status === 'pending_payment'}}" bindtap="onPay">去支付</view>
     <view class="action-btn primary" wx:if="{{order.status === 'pending_receipt'}}" bindtap="onConfirmReceive">确认收货</view>
+    <view class="action-btn outline" wx:if="{{order.status === 'completed' && !hasRefund}}" bindtap="onRefund">申请退款</view>
+    <view class="action-btn disabled" wx:elif="{{order.status === 'completed' && hasRefund}}">已申请退款</view>
   </view>
 </view>
 

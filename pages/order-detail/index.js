@@ -4,12 +4,14 @@
 const { getProductImage } = require('../../utils/image');
 const { pay } = require('../../utils/payment');
 const { getOrderStatusText, getOrderStatusColor } = require('../../utils/util');
+const { getRefundByOrderNo } = require('../../utils/refund');
 
 Page({
   data: {
     order: null,
     statusText: '',
-    statusColor: ''
+    statusColor: '',
+    hasRefund: false
   },
 
   onLoad(options) {
@@ -86,6 +88,13 @@ Page({
     });
   },
 
+  /** 申请退款 */
+  onRefund() {
+    const { order } = this.data;
+    if (!order) return;
+    wx.navigateTo({ url: '/pages/refund/index?orderNo=' + order.orderNo + '&price=' + order.totalPrice });
+  },
+
   /** 更新订单状态 */
   updateStatus(newStatus) {
     const orderList = wx.getStorageSync('orderList') || [];
@@ -95,6 +104,14 @@ Page({
       wx.setStorageSync('orderList', orderList);
       wx.showToast({ title: '操作成功', icon: 'success' });
       this.loadOrder(order.orderNo);
+    }
+  },
+
+  onShow() {
+    const { order } = this.data;
+    if (order) {
+      const refund = getRefundByOrderNo(order.orderNo);
+      this.setData({ hasRefund: !!refund });
     }
   }
 });
