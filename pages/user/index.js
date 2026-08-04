@@ -88,7 +88,14 @@ Page({
     // 存储要查看的tab
     wx.setStorageSync('orderActiveTab', status || 'all');
   },
-
+  
+ /** 跳转到消费统计页面 */
+  onGoDashboard() {
+    wx.navigateTo({
+      url: '/pages/dashboard/index'
+    })
+  },
+  
   /** 跳转地址管理 */
   onAddressManage() {
     wx.navigateTo({ url: '/pages/address/index' });
