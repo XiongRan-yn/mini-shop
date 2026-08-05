@@ -1,30 +1,39 @@
-  <!-- 功能菜单 -->
-  <view class="menu-section card">
-    <view class="menu-item" bindtap="onAddressManage">
-      <text class="menu-icon">📫</text>
-      <text class="menu-text">收货地址管理</text>
-      <text class="menu-arrow">›</text>
+<!--消费统计页面-->
+<view class="page">
+  <!--统计卡片区域-->
+  <view class="card-wrap">
+    <view class="stat-card">
+      <text class="stat-label">消费总额</text>
+      <text class="stat-value">¥{{totalSpend}}</text>
     </view>
-    <view class="divider"></view>
-
-    <!-- 消费统计 新增开始 -->
-    <view class="menu-item" bindtap="onGoDashboard">
-      <text class="menu-icon">📊</text>
-      <text class="menu-text">消费统计</text>
-      <text class="menu-arrow">›</text>
+    <view class="stat-card">
+      <text class="stat-label">订单数量</text>
+      <text class="stat-value">{{orderCount}}</text>
     </view>
-    <view class="divider"></view>
-    <!-- 消费统计 新增结束 -->
-
-    <view class="menu-item" bindtap="onContact">
-      <text class="menu-icon">💬</text>
-      <text class="menu-text">联系客服</text>
-      <text class="menu-arrow">›</text>
-    </view>
-    <view class="divider"></view>
-    <view class="menu-item" bindtap="onAbout">
-      <text class="menu-icon">ℹ️</text>
-      <text class="menu-text">关于我们</text>
-      <text class="menu-arrow">›</text>
+    <view class="stat-card">
+      <text class="stat-label">优惠节省</text>
+      <text class="stat-value">¥{{saveMoney}}</text>
     </view>
   </view>
+
+  <!--最近订单列表-->
+  <view class="list-card">
+    <view class="list-title">最近订单</view>
+    <block wx:if="{{recentOrderList.length>0}}">
+      <view class="order-item" wx:for="{{recentOrderList}}" wx:key="orderNo" bindtap="goOrderDetail" data-order-no="{{item.orderNo}}">
+        <view class="row">
+          <text class="order-no">订单：{{item.orderNo}}</text>
+          <text class="money">¥{{item.totalPrice.toFixed(2)}}</text>
+        </view>
+        <view class="row">
+          <text class="time">{{item.createTimeStr}}</text>
+          <text class="status">{{item.statusText}}</text>
+        </view>
+      </view>
+    </block>
+    <view class="empty-tip" wx:else>暂无订单数据</view>
+  </view>
+
+  <view style="height:120rpx"></view>
+</view>
+<custom-tab-bar selected="{{3}}"/>
