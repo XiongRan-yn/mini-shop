@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 退款模块
  */
 const STORAGE_KEY = 'refundList';

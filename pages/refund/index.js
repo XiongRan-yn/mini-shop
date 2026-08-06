@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 退款申请页
  */
 const refundService = require('../../utils/refund');
@@ -29,7 +29,7 @@ Page({
 
     wx.showModal({
       title: '确认申请',
-      content: 退款金额：¥，确定提交？,
+      content: `退款金额：¥${totalPrice.toFixed(2)}，确定提交？`,
       success: (res) => {
         if (res.confirm) {
           refundService.submitRefund({ orderNo, totalPrice, reason });
