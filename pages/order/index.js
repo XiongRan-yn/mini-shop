@@ -70,7 +70,7 @@ Page({
     pay(order)
       .then((res) => {
         if (res.success) {
-          this.updateOrderStatus(orderNo, 'pending_shipment');
+          this.updateOrderStatus(orderNo, 'completed');
         }
       })
       .catch((err) => {
