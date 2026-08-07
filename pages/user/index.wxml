@@ -70,6 +70,14 @@
       <text class="menu-arrow">›</text>
     </view>
     <view class="divider"></view>
+<!-- ==========新增消费统计菜单========== -->
+    <view class="menu-item" bindtap="onGoDashboard">
+      <text class="menu-icon">📊</text>
+      <text class="menu-text">消费统计</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="divider"></view>
+
     <view class="menu-item" bindtap="onAddressManage">
       <text class="menu-icon">📫</text>
       <text class="menu-text">收货地址管理</text>
