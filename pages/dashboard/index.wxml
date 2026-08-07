@@ -1,0 +1,30 @@
+  <!-- 功能菜单 -->
+  <view class="menu-section card">
+    <view class="menu-item" bindtap="onAddressManage">
+      <text class="menu-icon">📫</text>
+      <text class="menu-text">收货地址管理</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="divider"></view>
+
+    <!-- 消费统计 新增开始 -->
+    <view class="menu-item" bindtap="onGoDashboard">
+      <text class="menu-icon">📊</text>
+      <text class="menu-text">消费统计</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="divider"></view>
+    <!-- 消费统计 新增结束 -->
+
+    <view class="menu-item" bindtap="onContact">
+      <text class="menu-icon">💬</text>
+      <text class="menu-text">联系客服</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="divider"></view>
+    <view class="menu-item" bindtap="onAbout">
+      <text class="menu-icon">ℹ️</text>
+      <text class="menu-text">关于我们</text>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
