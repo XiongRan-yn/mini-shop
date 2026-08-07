@@ -17,13 +17,15 @@ function saveFavorites(favorites) {
 
 /** 是否已收藏 */
 function isFavorite(productId) {
-  return getFavorites().some(item => item.id === productId);
+  const id = parseInt(productId, 10);
+  return getFavorites().some(item => parseInt(item.id, 10) === id);
 }
 
 /** 添加收藏 */
 function addFavorite(product) {
   const favorites = getFavorites();
-  if (!favorites.some(item => item.id === product.id)) {
+  const productId = parseInt(product.id, 10);
+  if (!favorites.some(item => parseInt(item.id, 10) === productId)) {
     favorites.push({
       id: product.id,
       name: product.name,
@@ -41,16 +43,20 @@ function addFavorite(product) {
 
 /** 取消收藏 */
 function removeFavorite(productId) {
-  const favorites = getFavorites().filter(item => item.id !== productId);
+  const id = parseInt(productId, 10);
+  const favorites = getFavorites().filter(item => parseInt(item.id, 10) !== id);
   saveFavorites(favorites);
   return favorites;
 }
 
-/** 切换收藏状态（已收藏则取消，否则添加） */
+/** 切换收藏状态（已收藏则取消，否则添加），返回切换后是否处于收藏状态 */
 function toggleFavorite(product) {
-  return isFavorite(product.id)
-    ? removeFavorite(product.id)
-    : addFavorite(product);
+  if (isFavorite(product.id)) {
+    removeFavorite(product.id);
+    return false;
+  }
+  addFavorite(product);
+  return true;
 }
 
 /** 获取收藏数量 */
