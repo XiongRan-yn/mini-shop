@@ -50,7 +50,7 @@ Page({
     pay(order)
       .then((res) => {
         if (res.success) {
-          this.updateStatus('completed');
+          this.updateStatus('pending_shipment');
         }
       })
       .catch((err) => {
