@@ -13,6 +13,7 @@
     "pages/favorites/index",
     "pages/user/index",
     "pages/refund/index"
+     "pages/dashboard/index"
   ],
   "tabBar": {
     "custom": true,
