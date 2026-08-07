@@ -10,6 +10,7 @@
     "pages/address-edit/index",
     "pages/order/index",
     "pages/order-detail/index",
+    "pages/favorites/index",
     "pages/user/index",
     "pages/refund/index"
   ],

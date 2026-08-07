@@ -13,7 +13,13 @@
       <text class="price-current">¥{{goods.price}}</text>
       <text class="price-original" wx:if="{{goods.originalPrice > goods.price}}">¥{{goods.originalPrice}}</text>
     </view>
-    <view class="goods-name">{{goods.name}}</view>
+    <view class="goods-name-row">
+      <view class="goods-name">{{goods.name}}</view>
+      <view class="fav-btn {{isFavorite ? 'fav-active' : ''}}" bindtap="onToggleFavorite">
+        <text class="fav-heart">{{isFavorite ? '♥' : '♡'}}</text>
+        <text class="fav-label">{{isFavorite ? '已收藏' : '收藏'}}</text>
+      </view>
+    </view>
     <view class="goods-meta">
       <text class="meta-item">销量 {{goods.sales}}</text>
       <text class="meta-item" wx:if="{{goods.stock > 0}}">库存 {{goods.stock}}件</text>
