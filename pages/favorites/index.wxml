@@ -1,0 +1,30 @@
+<!-- 我的收藏页 -->
+<view class="page">
+  <view class="favorite-list" wx:if="{{favorites.length > 0}}">
+    <view
+      class="favorite-item card"
+      wx:for="{{favorites}}"
+      wx:key="id"
+      bindtap="onGoGoods"
+      data-id="{{item.id}}"
+    >
+      <image class="item-image" src="{{item.image}}" mode="aspectFill" />
+      <view class="item-info">
+        <view class="item-name text-ellipsis">{{item.name}}</view>
+        <view class="item-bottom">
+          <view class="item-price">
+            <text class="price-current">¥{{item.price}}</text>
+            <text class="price-original" wx:if="{{item.originalPrice > item.price}}">¥{{item.originalPrice}}</text>
+          </view>
+          <text class="item-sales">已售{{item.sales}}</text>
+        </view>
+      </view>
+      <view class="item-remove" catchtap="onRemoveFavorite" data-id="{{item.id}}">♥</view>
+    </view>
+  </view>
+
+  <view class="empty-state" wx:else>
+    <text class="empty-icon">🤍</text>
+    <text class="empty-text">还没有收藏商品</text>
+  </view>
+</view>

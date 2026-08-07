@@ -89,6 +89,11 @@ Page({
     wx.setStorageSync('orderActiveTab', status || 'all');
   },
 
+  /** 跳转我的收藏 */
+  onGoFavorites() {
+    wx.navigateTo({ url: '/pages/favorites/index' });
+  },
+
   /** 跳转地址管理 */
   onAddressManage() {
     wx.navigateTo({ url: '/pages/address/index' });
