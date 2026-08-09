@@ -1,10 +1,10 @@
-  <!--消费统计页面-->
+  <!--消费统计页面 pages/dashboard/index.wxml-->
 <view class="page">
   <!--统计卡片区域-->
   <view class="card-wrap">
     <view class="stat-card">
       <text class="stat-label">消费总额</text>
-      <text class="stat-value">¥{{totalSpend}}</text>
+      <text class="stat-value">¥{{showTotalSpend}}</text>
     </view>
     <view class="stat-card">
       <text class="stat-label">订单数量</text>
@@ -12,18 +12,19 @@
     </view>
     <view class="stat-card">
       <text class="stat-label">优惠节省</text>
-      <text class="stat-value">¥{{saveMoney}}</text>
+      <text class="stat-value">¥{{showSaveMoney}}</text>
     </view>
   </view>
 
   <!--最近订单列表-->
   <view class="list-card">
     <view class="list-title">最近订单</view>
-    <block wx:if="{{recentOrderList.length>0}}">
-      <view class="order-item" wx:for="{{recentOrderList}}" wx:key="orderNo" bindtap="goOrderDetail" data-order-no="{{item.orderNo}}">
+    <block wx:if="{{recentOrderList.length > 0}}">
+      <view class="order-item" wx:for="{{recentOrderList}}" wx:key="orderNo"
+            bindtap="goOrderDetail" data-order-no="{{item.orderNo}}">
         <view class="row">
           <text class="order-no">订单：{{item.orderNo}}</text>
-          <text class="money">¥{{item.totalPrice.toFixed(2)}}</text>
+          <text class="money">¥{{item.showTotalPrice}}</text>
         </view>
         <view class="row">
           <text class="time">{{item.createTimeStr}}</text>
@@ -34,6 +35,6 @@
     <view class="empty-tip" wx:else>暂无订单数据</view>
   </view>
 
+  <!--底部占位，避开自定义tabBar-->
   <view style="height:120rpx"></view>
 </view>
-<custom-tab-bar selected="{{3}}"/>
